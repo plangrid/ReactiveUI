@@ -11,6 +11,7 @@ export:
   regex-text: '### Where to get it(\r\n)*You can .*\)'
   multiline-regex: true
 issue-labels-include:
+- reactiveui-fody
 - reactiveui-core
 - reactiveui-events
 - windows-forms
@@ -30,6 +31,9 @@ issue-labels-exclude:
 - cla-required
 - cla-signed
 issue-labels-alias:
+    - name:    reactiveui-fody
+      header:  Fody
+      plural:  Fody
     - name:    reactiveui-core
       header:  All Platforms
       plural:  All Platforms
