@@ -53,15 +53,13 @@
     <Compile Include="Settings\GlobalSettings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\ReactiveUI\ReactiveUI_Net45.csproj">
       <Project>{1CE2D235-8072-4649-BA5A-CFB1AF8776E0}</Project>
       <Name>ReactiveUI_Net45</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="..\ReactiveUI.Fody.Helpers\ReactiveUI.Fody.Helpers.projitems" Label="Shared" Condition="Exists('..\ReactiveUI.Fody.Helpers\ReactiveUI.Fody.Helpers.projitems')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
