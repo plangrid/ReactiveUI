@@ -2,7 +2,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <id>reactiveui-testing-kswoll</id>
-    <version>6.6.3</version>
+    <version>6.6.16</version>
     <description>An MVVM library for WPF and Silverlight that is deeply integrated with the Reactive Extensions</description>
     <authors>Paul Betts</authors>
     <projectUrl>http://www.reactiveui.net</projectUrl>
