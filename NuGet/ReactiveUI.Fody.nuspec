@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>ReactiveUI.Fody-kswoll</id>
+    <version>6.6.16</version>
+    <description>An MVVM library for WPF and Silverlight that is deeply integrated with the Reactive Extensions</description>
+    <authors>Kirk Woll</authors>
+    <projectUrl>http://www.reactiveui.net</projectUrl>
+    <licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
+    <language>en-us</language>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+  </metadata>
+</package>
