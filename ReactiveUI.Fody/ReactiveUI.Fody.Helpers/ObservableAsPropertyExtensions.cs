@@ -17,7 +17,7 @@ namespace ReactiveUI.Fody.Helpers
 
             if (GlobalSettings.IsLogPropertyOnErrorEnabled)
                 @this = new LogPropertyOnErrorObservable<TRet>(@this, source, propertyInfo.Name);
-            var result = @this.ToProperty(source, property, initialValue, scheduler);
+            var result = @this.ToProperty(source, property, initialValue, scheduler ?? RxApp.MainThreadScheduler);
 
             var field = propertyInfo.DeclaringType.GetTypeInfo().GetDeclaredField("$" + propertyInfo.Name);
             if (field == null)
