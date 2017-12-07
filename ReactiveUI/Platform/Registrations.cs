@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Reactive.Concurrency;
+using System.Threading;
+using System.Windows.Threading;
 
 #if UNIFIED && UIKIT
 using UIKit;
@@ -13,7 +15,7 @@ using NSApplication = UIKit.UIApplication;
 #elif UIKIT
 using MonoTouch.UIKit;
 using NSApplication = MonoTouch.UIKit.UIApplication;
-#endif 
+#endif
 
 #if COCOA && !UIKIT && !UNIFIED
 using MonoMac.AppKit;
@@ -72,7 +74,10 @@ namespace ReactiveUI
 #endif
 
 #if !MONO && !WINRT
-            RxApp.MainThreadScheduler = new WaitForDispatcherScheduler(() => DispatcherScheduler.Current);
+            RxApp.MainThreadScheduler = new WaitForDispatcherScheduler(() => {
+                var dispatcher = Dispatcher.FromThread(Thread.CurrentThread);
+                return dispatcher != null ? DispatcherScheduler.Current : null;
+            });
 #endif
 
 #if WINRT

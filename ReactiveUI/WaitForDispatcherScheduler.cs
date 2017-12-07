@@ -52,7 +52,7 @@ namespace ReactiveUI
             if (_innerScheduler != null) return _innerScheduler;
             try {
                 _innerScheduler = _schedulerFactory();
-                return _innerScheduler;
+                return _innerScheduler ?? CurrentThreadScheduler.Instance;
             } catch (Exception) {
                 // NB: Dispatcher's not ready yet. Keep using CurrentThread
                 return CurrentThreadScheduler.Instance;
