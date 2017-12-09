@@ -8,7 +8,15 @@ namespace ReactiveUI.Fody.Helpers
 {
     public static class ObservableAsPropertyExtensions
     {
-        public static ObservableAsPropertyHelper<TRet> ToPropertyEx<TObj, TRet>(this IObservable<TRet> @this, TObj source, Expression<Func<TObj, TRet>> property, TRet initialValue = default(TRet), IScheduler scheduler = null) where TObj : ReactiveObject
+        public static ObservableAsPropertyHelper<TRet> ToPropertyEx<TObj, TRet>(this IObservable<TRet> @this, TObj source, Expression<Func<TObj, TRet>> property, IScheduler scheduler = null) where TObj : ReactiveObject
+        {
+            TRet initialValue = default(TRet);
+            @this.Subscribe(x => initialValue = x).Dispose();
+
+            return @this.ToPropertyEx(source, property, initialValue, scheduler);
+        }
+
+        public static ObservableAsPropertyHelper<TRet> ToPropertyEx<TObj, TRet>(this IObservable<TRet> @this, TObj source, Expression<Func<TObj, TRet>> property, TRet initialValue, IScheduler scheduler = null) where TObj : ReactiveObject
         {
             // Now assign the field via reflection.
             var propertyInfo = property.GetPropertyInfo();
